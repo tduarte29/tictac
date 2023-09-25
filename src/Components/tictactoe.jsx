@@ -153,7 +153,7 @@ const Tictactoe = () => {
             </div>
 
             </div>
-            <button className="reset" onClick={()=>{reset()}}>Reinciar</button>
+            <button className="reset" onClick={()=>{reset()}}>Reiniciar</button>
         </div>
     )
 
