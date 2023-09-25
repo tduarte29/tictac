@@ -2,7 +2,7 @@ import './tictactoe.css';
 import { useState,useRef, useEffect } from 'react';
 import circle_icon from '../assets/O image.png'
 import cross_icon from '../assets/X image.png'
-import backgroundMusic from '../assets/good.mp3';
+import backgroundMusic from '../assets/gold.mp3';
 
 
 
