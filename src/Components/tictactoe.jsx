@@ -13,12 +13,20 @@ let data = ["","","","","","","","",""];
 
 const Tictactoe = () => {
 
-    const audioRef = useRef(null);
-    useEffect(() => {
-        audioRef.current.volume = 0.1;
-        audioRef.current.play();
-      }, []);
 
+    const audioRef = useRef(null);
+    
+    const handleCanPlay = () => {
+        audioRef.current.volume = 0.1;
+    }
+
+    useEffect(() => {
+        if (audioRef.current) {
+            audioRef.current.play();
+        }
+    }, []);
+
+    const [gameStarted, setGameStarted] = useState(false);
     let [count,setCount] = useState(0);
     let [lock,setLock] = useState(false); 
     let titleRef = useRef(null);
@@ -34,6 +42,7 @@ const Tictactoe = () => {
 
     let box_array = [box1,box2,box3,box4,box5,box6,box7,box8,box9];
 
+    //simbolos X e O
     const toggle =(e,num) => {
         if (lock) {
             return 0;
@@ -52,7 +61,12 @@ const Tictactoe = () => {
         checkWin();
     }
 
-    
+    //inicio game
+
+    const startGame = () => {
+        setGameStarted(true);
+        audioRef.current.play();
+    }
 
 
 //Verificador de vitoria passando pelas casas.
@@ -94,11 +108,13 @@ const Tictactoe = () => {
         {
             won(data[6]);
         }
-        else if (data.every(square => square !== "")) {
+        else if (data.every(square => square !== "")) {  //Em caso de empate
             draw();
           }
         
     }
+    
+    //função vitoria
 
     const won = (winner) => {
         setLock(true);
@@ -133,7 +149,10 @@ const Tictactoe = () => {
 //Boxes e titulo + botão de reinicio 
     return(
         <div className='container'>
-            <audio ref={audioRef} src={backgroundMusic} autoPlay loop />
+             { !gameStarted && <button onClick={startGame}>Iniciar Jogo</button> }
+             { gameStarted &&
+             <>
+             <audio ref={audioRef} src={backgroundMusic} onCanPlay={handleCanPlay} autoPlay loop />
             <h1 className="title" ref={titleRef}>Jogo da Velha em <span>React</span> </h1>
             <div className="board">
             <div className="row1">
@@ -154,6 +173,8 @@ const Tictactoe = () => {
 
             </div>
             <button className="reset" onClick={()=>{reset()}}>Reiniciar</button>
+            </>
+            }
         </div>
     )
 
