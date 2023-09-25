@@ -52,3 +52,16 @@
     margin: 50px 50px;
 }
 
+.container button{
+    width: 250px;
+    height: 100px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: #d88ca2;
+    font-size: 26px;
+    color: white;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
