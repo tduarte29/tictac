@@ -62,6 +62,13 @@
     background-color: #d88ca2;
     font-size: 26px;
     color: white;
-    margin-top: 25px;
-    margin-bottom: 50px;
+    margin: 25px 0 50px;
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
 }
