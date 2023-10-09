@@ -32,7 +32,7 @@ body {
   justify-content: center;
   min-width: 320px;
   min-height: 100vh;
-  background-image: linear-gradient(30deg, black, black), url(assets/1222989.jpg);
+  background-image: linear-gradient(30deg, #00000066, #00000066), url(assets/1222989.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
