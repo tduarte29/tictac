@@ -3,17 +3,18 @@ import { useState,useRef, useEffect } from 'react';
 import circle_icon from '../assets/O image.png'
 import cross_icon from '../assets/X image.png'
 import backgroundMusic from '../assets/gold.mp3';
-
+import { Link } from 'react-router-dom'; 
 
 
 
 let data = ["","","","","","","","",""]; 
 
-//marca o X ou O
+
 
 const Tictactoe = () => {
 
 
+        //comando para musica, o audio eu escolhi pq estava ouvindo na hora.
     const audioRef = useRef(null);
     
     const handleCanPlay = () => {
@@ -25,7 +26,7 @@ const Tictactoe = () => {
             audioRef.current.play();
         }
     }, []);
-
+    //valor das box
     const [gameStarted, setGameStarted] = useState(false);
     let [count,setCount] = useState(0);
     let [lock,setLock] = useState(false); 
@@ -63,10 +64,12 @@ const Tictactoe = () => {
 
     //inicio game
 
+
     const startGame = () => {
         setGameStarted(true);
         audioRef.current.play();
     }
+
 
 
 //Verificador de vitoria passando pelas casas.
@@ -170,9 +173,14 @@ const Tictactoe = () => {
                 <div className="boxes" ref={box8} onClick={(e)=>{toggle(e,7)}}></div>
                 <div className="boxes" ref={box9} onClick={(e)=>{toggle(e,8)}}></div>
             </div>
-
+                
             </div>
+            <div className='buttonContainer'>
             <button className="reset" onClick={()=>{reset()}}>Reiniciar</button>
+            <Link to="/outra-pagina">
+                        <button>Ir a API</button>
+            </Link>
+            </div>
             </>
             }
         </div>
