@@ -7,6 +7,8 @@ const OutraPagina = () => {
 
 const [digimon,setDigimon] = useState ([])
 
+// Função para pegar todos os digimon através da api
+    
 async function getdigimon() {
     const res=await getAllDigimon ()
     setDigimon (res)
