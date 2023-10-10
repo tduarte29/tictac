@@ -32,3 +32,75 @@ width: 250px;
     align-items: center;
     margin: auto;
 }
+
+.horizontal-digimon-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    align-items: center; /* Centraliza os botões verticalmente */
+    width: 60%;
+  }
+  
+  /* Estilo dos botões de paginação */
+  .pagination button {
+    margin-right: 4px; /* Adicione o espaçamento desejado */
+    margin-bottom: 5px; /* Adicione o espaçamento vertical desejado entre as linhas */
+  }
+
+  /* Estilo da barra de pesquisa */
+.search-bar {
+    display: flex;
+    border-radius: 20px; /* Borda mais arredondada */
+    padding: 10px 20px; /* Aumente o preenchimento para torná-la maior */
+    margin-bottom: 30px; /* Adicione espaçamento para os Digimon abaixo */
+    
+  }
+  
+  .search-input {
+    flex-grow: 1; /* Expanda o input para preencher o espaço disponível */
+    border: none;
+    outline: none;
+    padding: 5px; /* Ajuste o preenchimento conforme necessário */
+    font-size: 16px; /* Tamanho da fonte */
+    border-radius: 10px;
+  }
+  
+  .search-button {
+    background-color: #333; /* Cor de fundo do botão */
+    border: none;
+    padding: 20px 30px;
+    border-radius: 5px; /* Arredonde as bordas do botão */
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Centralize verticalmente */
+  }
+  
+  .search-button:hover {
+    background-color: #555; /* Cor de fundo do botão ao passar o mouse */
+  }
+  
+  .search-button:focus {
+    outline: none; /* Remova a borda de foco */
+  }
+  
+  /* Estilo do ícone da lupa */
+  .search-button svg {
+    color: white; /* Cor do ícone */
+    font-size: 20px; /* Tamanho do ícone */
+    margin-right: 5px; /* Espaçamento entre o ícone e o texto (ajuste conforme necessário) */
+  }
+
+  *:focus {
+    outline: none;
+  }
+  
